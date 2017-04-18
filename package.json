@@ -1,7 +1,7 @@
 {
   "name": "friend-finder",
   "version": "1.0.0",
-  "description": "Node and Express Servers match making dating app.",
+  "description": "Survey Based Friend Compatability Matching App Built With Node and Express Servers.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

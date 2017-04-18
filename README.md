@@ -1,2 +1,2 @@
 # Friend-Finder
- Friend Finder - Node and Express Servers match making dating app.
+ Friend Finder - Survey Based Friend Compatability Matching App Built With Node and Express Servers.
