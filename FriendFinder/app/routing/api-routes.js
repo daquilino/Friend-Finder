@@ -34,7 +34,7 @@ function compareScores(user)
 		for(let i =0; i < user.scores.length; i++)
 		{
 			total += Math.abs(user.scores[i] - friend.scores[i])
-console.log("total:", total);			
+		
 		}	
 	
 		//If total is the lowest, set bff to current 'friend'
