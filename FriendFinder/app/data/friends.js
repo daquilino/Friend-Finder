@@ -2,8 +2,8 @@
 
 let friends =[
 	{
-	   "name":"Doug",
-	   "photo":"http://www.shunvmall.com/data/out/193/47120931-random-image.png",
+	   "name":"George",
+	   "photo":"http://kingofwallpapers.com/george-harrison/george-harrison-005.jpg",
 	   "scores":[
 	      5,
 	      1,
@@ -18,8 +18,8 @@ let friends =[
 	    ]
 	},
 	{
-	   "name":"Friend1",
-	   "photo":"http://www.shunvmall.com/data/out/193/47120931-random-image.png",
+	   "name":"Paul",
+	   "photo":"http://kingofwallpapers.com/paul-mccartney/paul-mccartney-005.jpg",
 	   "scores":[
 	      1,
 	      2,
@@ -34,8 +34,24 @@ let friends =[
 	    ]
 	},
 	{
-	   "name":"Friend2",
-	   "photo":"http://www.shunvmall.com/data/out/193/47120931-random-image.png",
+	   "name":"John",
+	   "photo" : "http://kingofwallpapers.com/john-lennon/john-lennon-011.jpg",
+	   "scores":[
+	      1,
+	      5,
+	      5,
+	      4,
+	      5,
+	      5,
+	      2,
+	      5,
+	      1,
+	      1
+	    ]
+	},
+	{
+	   "name":"Ringo",
+	   "photo":"http://kingofwallpapers.com/ringo-starr/ringo-starr-003.jpg",
 	   "scores":[
 	      1,
 	      5,
@@ -53,3 +69,4 @@ let friends =[
 
 
 module.exports = friends;
+

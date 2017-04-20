@@ -233,13 +233,12 @@
 		{
 			console.log(res);
 
+			//setting data for modal	
 			$("#matchName").text(res.name);
 	    	$('#matchImg').attr("src", res.photo);
 
 		    // Shows the modal 
 		    $("#resultsModal").modal('toggle');
-
-
 
 		});
 	});
