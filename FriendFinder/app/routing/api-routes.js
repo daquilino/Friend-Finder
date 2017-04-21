@@ -15,10 +15,10 @@ module.exports = function(app)
 		res.json(compareScores(req.body));
 		FRIENDS.push(req.body);
 	});
-
 }
 
-
+// Loops through scores of each 'friend' and compares to current user's scorses.
+// The 
 function compareScores(user)
 {
 
@@ -33,8 +33,7 @@ function compareScores(user)
 
 		for(let i =0; i < user.scores.length; i++)
 		{
-			total += Math.abs(user.scores[i] - friend.scores[i])
-		
+			total += Math.abs(user.scores[i] - friend.scores[i])		
 		}	
 	
 		//If total is the lowest, set bff to current 'friend'
