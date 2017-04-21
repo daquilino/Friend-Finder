@@ -1,7 +1,7 @@
+//Dependencies
 const EXPRESS = require('express');
 const BODYPARSER = require('body-parser');
 const PATH = require('path');
-
 
 const PORT = process.env.PORT || 9999;
 const APP = EXPRESS();
@@ -22,7 +22,6 @@ APP.use(BODYPARSER.json({ type: "application/vnd.api+json" }));
 
 require("./FriendFinder/app/routing/api-routes.js")(APP);
 require("./FriendFinder/app/routing/html-routes.js")(APP);
-
 
 
 //Express Listener
