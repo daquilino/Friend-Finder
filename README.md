@@ -1,11 +1,18 @@
 # Friend-Finder
 
 Friend Finder is a survey based friend compatability app built with Node and Express Servers.
-This full-stack site will take in results of the users' answers to the survey questions, then compare their answers with those from other users.  The app will then display the name and picture of the user with the best overall match.
+This full-stack site will take in results of the users' answers to survey questions, then compare their answers with those from other users.  The app will then display the name and picture of the user with the best overall match.
 
+## Getting Started
+
+### Prerequisites
+
+* Web Browser
+* Internet Connection 
 
 ## Usage
-
+	Visit App On Heroku
+	[Friend Finder](https://fierce-cove-50826.herokuapp.com/)
 
 
 ## Built With
