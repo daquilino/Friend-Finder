@@ -11,9 +11,59 @@ This full-stack site will take in results of the users' answers to survey questi
 * Internet Connection 
 
 ## Usage
-* Visit App On Heroku
-* [Friend Finder](https://fierce-cove-50826.herokuapp.com/)
 
+* [Friend Finder](https://fierce-cove-50826.herokuapp.com/)
+	- Visit App On Heroku
+	- Take Survey.
+	- Click 'Submit'
+	- Friendship Nirvana
+
+## The Heart of the APP.
+	
+	* Below is the function used to compare scores.
+	* Loops through scores of each 'friend' and compares to current user's scorses.
+	* Returns 'friend' with the best match (lowest difference) in scores. 
+
+
+
+```javascript
+
+
+function compareScores(user)
+{
+	// Contains the 'friend' with the best match (lowest difference)  
+	let bff;
+
+	// Containes the lowest total difference of scores.
+	let lowestTotal = 100;
+
+	for(let key in FRIENDS)
+	{
+		//current friend in array 
+		let friend = FRIENDS[key];
+		
+		// total difference between scores.
+		let total = 0;
+
+		//compares user scores with 'friend' scores and sums absolute value of difference.
+		for(let i =0; i < user.scores.length; i++)
+		{
+			total += Math.abs(user.scores[i] - friend.scores[i])		
+		}	
+	
+		//If total is the lowest, set bff to current 'friend'
+		if(total < lowestTotal)
+		{
+			lowestTotal = total;
+			bff = friend;
+		}	
+	}	
+
+	return(bff);
+
+}//END compareScores()
+
+```
 
 ## Built With
 

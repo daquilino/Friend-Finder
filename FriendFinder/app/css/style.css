@@ -1,14 +1,33 @@
-body
+body, .modal-body, .modal-header, .modal-footer
 {
-
-	
+	background: tan;
 }
 
 /*home.html Jumbotron*/
 .jumbotron
 {
-	/*background: rgba(125,125,155,.5);*/
+	margin-top: 2%;
+	background: pink;
 }
+
+.jumbotron h1 
+{
+	font-family: 'Passion One', cursive;
+	color: #337ab7;
+}
+
+h2, h3, h4
+{
+	color: #337ab7;
+}
+
+.jumbotron img
+{
+	width: 25%;
+	border-radius: 50%;
+}
+
+
 
 /* forms in survey.html*/
 .form-control

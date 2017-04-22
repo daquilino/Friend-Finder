@@ -13,11 +13,8 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Font Awesome CSS -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -35,16 +32,15 @@
 		<hr>
 
 		<h3><strong>About You</strong></h3>
-		<h4>Name (Required)</h4>
+		<h4>Name</h4>
 		<input type="text" name="" id="name" class="form-control" required >
 
-		<h4>Link to Photo Image (Required)</h4>
+		<h4>Link to Photo Image</h4>
 		<input type="text" name="" id="photo" class="form-control" required >
 
-		<hr>
 
 		<h3><strong>Question 1</strong></h3>
-		<h4>People are always saying how smelly you are.</h4>
+		<h4>People are always saying how cheeky I am.</h4>
 	 	<select class="form-control" id="Q1">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -55,7 +51,7 @@
 	  	</select>
 
 		<h3><strong>Question 2</strong></h3>
-		<h4>You constantly confuse Star Wars &amp; Star Trek.</h4>
+		<h4>I constantly confuse Star Wars &amp; Star Trek.</h4>
 	 	<select class="form-control" id="Q2">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +75,7 @@
 
 
 		<h3><strong>Question 4</strong></h3>
-		<h4>Question 4.</h4>
+		<h4>One does not simply walk into Mordor.</h4>
 	 	<select class="form-control" id="Q4">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +87,7 @@
 
 
 		<h3><strong>Question 5</strong></h3>
-		<h4>Question 5.</h4>
+		<h4>I don't mind getting my hands dirty.</h4>
 	 	<select class="form-control" id="Q5">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -103,7 +99,7 @@
 
 
 		<h3><strong>Question 6</strong></h3>
-		<h4>Question 6.</h4>
+		<h4>I think with my head and not my heart.</h4>
 	 	<select class="form-control" id="Q6">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -115,7 +111,7 @@
 
 
 		<h3><strong>Question 7</strong></h3>
-		<h4>Question 7.</h4>
+		<h4>I often stop and smell the flowers.</h4>
 	 	<select class="form-control" id="Q7">
 	        <option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -126,7 +122,7 @@
 	  	</select>
 
 		<h3><strong>Question 8</strong></h3>
-		<h4>Question 8.</h4>
+		<h4>I love to learn new things.</h4>
 	 	<select class="form-control" id="Q8">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -137,7 +133,7 @@
 	  	</select>
 
 		<h3><strong>Question 9</strong></h3>
-		<h4>Question 9.</h4>
+		<h4>One cannot really have too many cats.</h4>
 	 	<select class="form-control" id="Q9">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -148,7 +144,7 @@
 	  	</select>
 
 		<h3><strong>Question 10</strong></h3>
-		<h4>Question 10.</h4>
+		<h4>I get sad when I come to the last quesion of a survey.</h4>
 	    <select class="form-control" id="Q10">
 	    	<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -180,7 +176,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 			    	<button type="button" class="close" data-dismiss="modal">&times;</button>
-			    	<h2 class="modal-title"><strong>Best Match</strong></h2>
+			    	<h2 class="modal-title" id="modal-title"></h2>
 			  	</div>
 			  	<div class="modal-body">
 			    	<h2 id="matchName"></h2>
@@ -196,9 +192,9 @@
 
 	<!-- Front-End Logic -->
 	<script type="text/javascript">
- 	
+ 		
 	$('#submit').on("click", function(){
-		
+	
 		//saves server name
 		let servername = location.origin;
 
@@ -239,7 +235,8 @@
 			{
 				console.log(res);
 
-				//setting data for modal	
+				//setting data for modal
+				$("#modal-title").html("<strong>Your New BFF</strong>");	
 				$("#matchName").text(res.name);
 		    	$('#matchImg').attr("src", res.photo);
 
@@ -252,6 +249,7 @@
 		else
 		{
 			//Survey not filled out messege	
+			$("#modal-title").html("<strong>Opps! You Missed Something.</strong>");
 			$("#matchName").text("Please Fill Survey Out Completely!");
 	    	$('#matchImg').attr("src", "http://www.clipartkid.com/images/453/premier-ehealth-initiative-survey-suggests-many-acos-lack-mobile-wVXnDF-clipart.jpg");
 
