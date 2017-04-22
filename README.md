@@ -1,8 +1,10 @@
 # Friend-Finder
- Friend Finder - Survey Based Friend Compatability Matching App Built With Node and Express Servers.
 
-compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+Friend Finder is a survey based friend compatability app built with Node and Express Servers.
+This full-stack site will take in results of the users' answers to the survey questions, then compare their answers with those from other users.  The app will then display the name and picture of the user with the best overall match.
 
+
+## Usage
 
 
 
