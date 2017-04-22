@@ -17,7 +17,7 @@ APP.use(BODYPARSER.urlencoded({ extended: true }));
 APP.use(BODYPARSER.text());
 APP.use(BODYPARSER.json({ type: "application/vnd.api+json" }));
 
-APP.use("/app", EXPRESS.static(__dirname + 'FriendFinder/app'));
+APP.use(EXPRESS.static(__dirname + 'FriendFinder/app/css'));
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
