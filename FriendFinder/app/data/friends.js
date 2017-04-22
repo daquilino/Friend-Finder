@@ -1,4 +1,8 @@
-//Friends module containing 'friends' array which will contain all users data as object.
+//Douglas Aquilino	April 22, 2017 'Friends Finder' friends.js
+//https://github.com/daquilino/Friend-Finder
+//
+// Friends module containing 'friends' array which will contain users data as object.
+// I created four objects conatining data for testing purposes.
 
 let friends =[
 	{

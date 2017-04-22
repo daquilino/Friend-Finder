@@ -1,3 +1,7 @@
+<!-- Douglas Aquilino	April 22, 2017 'Friends Finder' survey.html
+	 https://github.com/daquilino/Friend-Finder 
+-->
+
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -12,26 +16,22 @@
 	<!-- Font Awesome CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
 	<!-- Bootstrap JS -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	
-	<style type="text/css">
-		.form-control
-		{
-			max-width: 50%;
-		}
-	</style>
 
 </head>
 <body>
 	
 	<div class="container">
 
-		<h2>Survey Questions</h2>
+		<h2>Friend Finder Survey Questions</h2>
 		<hr>
 
 		<h3><strong>About You</strong></h3>
@@ -184,7 +184,7 @@
 			  	</div>
 			  	<div class="modal-body">
 			    	<h2 id="matchName"></h2>
-			    	<img id="matchImg" src="" alt="Match Image">
+			    	<img id="matchImg" src="http://kingofwallpapers.com/george-harrison/george-harrison-005.jpg" alt="Match Image">
 			  	</div>
 			  	<div class="modal-footer">
 			    	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -196,7 +196,7 @@
 
 	<!-- Front-End Logic -->
 	<script type="text/javascript">
-		
+ 	
 	$('#submit').on("click", function(){
 
 		let servername = location.origin;

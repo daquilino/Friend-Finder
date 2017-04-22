@@ -1,5 +1,13 @@
+//Douglas Aquilino	April 22, 2017 'Friends Finder' api-routes.js
+//https://github.com/daquilino/Friend-Finder
+
+// Express routes and logic for apis.
+
 const FRIENDS = require("../data/friends.js");
 
+
+// Function excepts parameter for calling Express.
+// Contains two routes for  ('/'), survey ('/survey'), and 404 'catch all' ('*').
 module.exports = function(app)
 {
 	//

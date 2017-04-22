@@ -1,7 +1,13 @@
+//Douglas Aquilino	April 22, 2017 'Friends Finder' html-routes.js
+//https://github.com/daquilino/Friend-Finder
+
+//Express routes for html pages.
+
 //Dependency
 const PATH = require('path');
 
-//
+// Function has parameter for calling Express.
+// Contains three routes for root ('/'), survey ('/survey'), and 404 'catch all' ('*').
 module.exports = function(app)
 {
 	//ROUTES

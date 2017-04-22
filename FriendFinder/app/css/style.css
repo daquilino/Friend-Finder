@@ -1,0 +1,23 @@
+body
+{
+	
+	
+}
+
+/*home.html Jumbotron*/
+.jumbotron
+{
+	/*background: rgba(125,125,155,.5);*/
+}
+
+/* forms in survey.html*/
+.form-control
+{
+	max-width: 50%;
+}
+
+/* modal image in survey.html*/
+#matchImg
+{
+	width: 100%;
+}

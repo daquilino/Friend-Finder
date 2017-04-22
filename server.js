@@ -1,3 +1,7 @@
+//Douglas Aquilino	April 22, 2017 'Friends Finder' server.js
+//https://github.com/daquilino/Friend-Finder
+
+
 //Dependencies
 const EXPRESS = require('express');
 const BODYPARSER = require('body-parser');
