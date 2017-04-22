@@ -11,8 +11,8 @@ This full-stack site will take in results of the users' answers to survey questi
 * Internet Connection 
 
 ## Usage
-	Visit App On Heroku
-	[Friend Finder](https://fierce-cove-50826.herokuapp.com/)
+* Visit App On Heroku
+* [Friend Finder](https://fierce-cove-50826.herokuapp.com/)
 
 
 ## Built With
