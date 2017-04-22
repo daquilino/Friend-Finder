@@ -12,18 +12,16 @@ This full-stack site will take in results of the users' answers to survey questi
 
 ## Usage
 
-* [Friend Finder](https://fierce-cove-50826.herokuapp.com/)
-	- Visit App On Heroku
-	- Take Survey.
-	- Click 'Submit'
-	- Friendship Nirvana
+- Visit App On Heroku [Friend Finder](https://fierce-cove-50826.herokuapp.com/)
+- Take Survey.
+- Click 'Submit'
+- Friendship Nirvana
 
 ## The Heart of the APP.
 	
-	* Below is the function used to compare scores.
-	* Loops through scores of each 'friend' and compares to current user's scorses.
-	* Returns 'friend' with the best match (lowest difference) in scores. 
-
+* Below is the function used to compare scores.
+* Loops through scores of each 'friend' and compares to current user's scorses.
+* Returns 'friend' with the best match (lowest difference) in scores. 
 
 
 ```javascript
