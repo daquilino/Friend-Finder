@@ -17,14 +17,10 @@ APP.use(BODYPARSER.urlencoded({ extended: true }));
 APP.use(BODYPARSER.text());
 APP.use(BODYPARSER.json({ type: "application/vnd.api+json" }));
 
-//Sets the static path for css directory.
+//serves static file path for style.css file in css folder.
 APP.use(EXPRESS.static(PATH.join(__dirname, 'FriendFinder/app/css')));
 
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
+// ROUTER - Below points our server to a series of "route" files.
 
 require("./FriendFinder/app/routing/api-routes.js")(APP);
 require("./FriendFinder/app/routing/html-routes.js")(APP);

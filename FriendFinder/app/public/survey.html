@@ -55,7 +55,7 @@
 	  	</select>
 
 		<h3><strong>Question 2</strong></h3>
-		<h4>You belive Star Wars to be a Biography.</h4>
+		<h4>You constantly confuse Star Wars &amp; Star Trek.</h4>
 	 	<select class="form-control" id="Q2">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -67,7 +67,7 @@
 
 
 		<h3><strong>Question 3</strong></h3>
-		<h4>Your name is Taylor.</h4>
+		<h4>Even bad pizza is pretty good.</h4>
 	 	<select class="form-control" id="Q3">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +79,7 @@
 
 
 		<h3><strong>Question 4</strong></h3>
-		<h4>You rarely do something just out of sheer curiosity.</h4>
+		<h4>Question 4.</h4>
 	 	<select class="form-control" id="Q4">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +91,7 @@
 
 
 		<h3><strong>Question 5</strong></h3>
-		<h4>People can rarely upset you.</h4>
+		<h4>Question 5.</h4>
 	 	<select class="form-control" id="Q5">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -103,7 +103,7 @@
 
 
 		<h3><strong>Question 6</strong></h3>
-		<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+		<h4>Question 6.</h4>
 	 	<select class="form-control" id="Q6">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -115,7 +115,7 @@
 
 
 		<h3><strong>Question 7</strong></h3>
-		<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+		<h4>Question 7.</h4>
 	 	<select class="form-control" id="Q7">
 	        <option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -126,7 +126,7 @@
 	  	</select>
 
 		<h3><strong>Question 8</strong></h3>
-		<h4>You rarely get carried away by fantasies and ideas.</h4>
+		<h4>Question 8.</h4>
 	 	<select class="form-control" id="Q8">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -137,7 +137,7 @@
 	  	</select>
 
 		<h3><strong>Question 9</strong></h3>
-		<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+		<h4>Question 9.</h4>
 	 	<select class="form-control" id="Q9">
 	 		<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -148,7 +148,7 @@
 	  	</select>
 
 		<h3><strong>Question 10</strong></h3>
-		<h4>You feel more energetic after spending time with a group of people.</h4>
+		<h4>Question 10.</h4>
 	    <select class="form-control" id="Q10">
 	    	<option value="" selected disabled>Please Select</option>
 	        <option value="1">1 (Strongly Disagree)</option>
@@ -198,46 +198,68 @@
 	<script type="text/javascript">
  	
 	$('#submit').on("click", function(){
-
+		
+		//saves server name
 		let servername = location.origin;
 
-		//ADD CODE  TO VALIDATE DATA.
+		// flag to check if survey is fully completed
+		let formFilled = true;
 
-		let newFriend = {
+		// If any survey question is 'null' sets flag to false
+		$('.form-control').each(function(e){
+			if(!$(this).val())
+			{
+				formFilled = false
+			}			
+		});
 
-			"name": $('#name').val() ,
-			"photo": $('#photo').val() ,
-			"scores": [
-						$('#Q1').val(),
-						$('#Q2').val(),
-						$('#Q3').val(),
-						$('#Q4').val(),
-						$('#Q5').val(),
-						$('#Q6').val(),
-						$('#Q7').val(),
-						$('#Q8').val(),
-						$('#Q9').val(),
-						$('#Q10').val()
-					]
-		};
+		//'Posts' user survey data to api if survey is filled out.
+		if(formFilled)
+		{		
+			let newFriend = {
 
-		$.post(servername + "/api/friends", newFriend)
-		.done(function(res) 
+				"name": $('#name').val() ,
+				"photo": $('#photo').val() ,
+				"scores": [
+							$('#Q1').val(),
+							$('#Q2').val(),
+							$('#Q3').val(),
+							$('#Q4').val(),
+							$('#Q5').val(),
+							$('#Q6').val(),
+							$('#Q7').val(),
+							$('#Q8').val(),
+							$('#Q9').val(),
+							$('#Q10').val()
+						]
+			};
+
+			$.post(servername + "/api/friends", newFriend)
+			.done(function(res) 
+			{
+				console.log(res);
+
+				//setting data for modal	
+				$("#matchName").text(res.name);
+		    	$('#matchImg').attr("src", res.photo);
+
+			    // Shows the modal 
+			    $("#resultsModal").modal('toggle');
+
+			});
+		}
+		// Survey not filled out completely alerts user in modal.
+		else
 		{
-			console.log(res);
-
-			//setting data for modal	
-			$("#matchName").text(res.name);
-	    	$('#matchImg').attr("src", res.photo);
+			//Survey not filled out messege	
+			$("#matchName").text("Please Fill Survey Out Completely!");
+	    	$('#matchImg').attr("src", "http://www.clipartkid.com/images/453/premier-ehealth-initiative-survey-suggests-many-acos-lack-mobile-wVXnDF-clipart.jpg");
 
 		    // Shows the modal 
 		    $("#resultsModal").modal('toggle');
-
-		});
-	});
-
-
-
+		}	
+	 
+	 });//END $('#submit').on("click"..
 
 
 	</script>
