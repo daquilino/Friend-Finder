@@ -17,8 +17,8 @@ APP.use(BODYPARSER.urlencoded({ extended: true }));
 APP.use(BODYPARSER.text());
 APP.use(BODYPARSER.json({ type: "application/vnd.api+json" }));
 
+//Sets the static path for css directory.
 APP.use(EXPRESS.static(PATH.join(__dirname, 'FriendFinder/app/css')));
-
 
 // ================================================================================
 // ROUTER
